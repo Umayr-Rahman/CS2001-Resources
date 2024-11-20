@@ -13,12 +13,24 @@
                        each list item should correspond to the menu items (Home, Register, Login, Help)
                        The css class of the menu is "navlist"
                        Check lecture slides about lists, an example of a more basic menu, and CSS class selector-->
-            <ul class="navlist">
+            <ul class="navlist">            
+                <li>Home</li>
+                <li>Register</li>
+                <li>Login</li>
+                <li>Help</li>                
             </ul>
-         </nav>
+
+          
+        </nav>
+
         <main>
             <!-- Check Week 2 Lecture to learn about HTML5 semantic elements-->
-            <aside>
+            <aside class="section">
+
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search" name="search">
+                </form>
+
             </aside>
             <section>
                 <form class="center" novalidate>
@@ -33,13 +45,47 @@
                            and how to create a button that would react to a click Event
                         -->
                     <!-- Example given for user type checkboxes-->
-                    
-                    <input type="checkbox" id="buyer" name="buyer" value="buyer">
-                    <label for="buyer">I want to buy produce directly from allotment owners.</label><br>
-                    <input type="checkbox" id="seller" name="seller" value="seller">
-                    <label for="seller">I want to sell produce from my allotment.</label><br><br>
+                    <form id="myForm" action="/action_page.php" novalidate>
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name" required><br><br>
+                        <label for="email">Email:</label><br>
+                        <input type="text" id="email" name="email" required><br><br>
+                        <label for="pass">Password:</label><br>
+                        <input type="text" id="pass" name="pass" required><br><br>
+                        <label for="pass2">Re-type Password:</label><br>
+                        <input type="text" id="pass2" name="pass2" required><br><br>
 
-                    <br><br>
+
+
+                        <input type="checkbox" id="buyer" name="buyer" value="buyer" required>
+                        <label for="buyer">I want to buy produce directly from allotment owners.</label><br>
+                        <input type="checkbox" id="seller" name="seller" value="seller" required>
+                        <label for="seller">I want to sell produce from my allotment.</label><br><br>
+                        <input type="checkbox" id="agree" name="agree" value="agree" required>
+                        <label for="agree">I agree to the <a href="https://google.com">Terms of Use</a> and <a href="https://google.com">Privacy Policy</a>.</label><br><br>
+                        <input type="button" value="Register" onclick="alert('Button clicked!')">
+                        <a href="https://google.com">Learn More</a>
+                        <br><br>
+                    </form>
+
+                    <script>
+                        const form = document.getElementById('myForm');
+                      
+                        form.addEventListener('submit', function(event) {
+                          // Check if all required fields are filled
+                          if (!form.checkValidity()) {
+                            event.preventDefault(); // Prevent form submission
+                            alert('Please fill in all required fields.');
+                          } else {
+                            // Additional validation checks
+                            if (document.getElementById('pass').value !== document.getElementById('pass2').value) {
+                              event.preventDefault(); // Prevent form submission
+                              alert('Passwords do not match.');
+                            }
+                          }
+                        });
+                      </script>
+
                 </form>
                 <div class="center" id="hiddenSection">
                     <p id="hiddenParagraph"></p>

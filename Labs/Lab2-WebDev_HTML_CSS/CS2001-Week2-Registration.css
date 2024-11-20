@@ -32,6 +32,12 @@ ul.navlist li
 {
     float: left;
     display: inline;
+    margin-right: 20px; 
+    line-height: 45px;
+    font-size: 20px;
+    margin-left: 20px; 
+    color: white;
+
 }
 
 ul.navlist li a {
@@ -54,12 +60,16 @@ main {
     /*ToDo: Make this a flexible container; 
     You can find the following helpful: display, flex-wrap, width, min-height, height
     See lecture slides*/
+    display: flex;
+    flex-wrap: wrap;
 }
 
 section, aside {
     padding: 0.5rem;
     box-sizing: border-box;
     min-height: 100%;
+    padding-right: 50px;
+
 }
 
 aside {
@@ -71,6 +81,7 @@ aside {
 section {
     /*ToDo: Set width. For fluid layouts, use min-width, max-width, and set to relative 
    values, like 75% of the page.*/
+   
 }
 
 /*Styling for search in aside*/
@@ -78,6 +89,7 @@ section {
     display: block;
     width: auto;
     text-align: left;
+   
 }
 
 .center {
